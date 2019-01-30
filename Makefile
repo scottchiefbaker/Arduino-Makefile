@@ -36,7 +36,7 @@ endif
 default: display_config
 	arduino --verify --pref build.path=$(BUILD_DIR) --port $(PORT) --board $(BOARD) $(SKETCH_FILE)
 
-upload: display_config check_port
+upload: display_config
 	arduino --upload --pref build.path=$(BUILD_DIR) --port $(PORT) --board $(BOARD) $(SKETCH_FILE)
 
 monitor:
