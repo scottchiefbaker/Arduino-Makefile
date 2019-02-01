@@ -26,4 +26,4 @@ Edit the `Makefile` itself and configure the `BOARD` and `PORT` options
 
 ## Troubleshooting
 
-Verify your code compiles and uploads via the official Arduino IDE. This `Makefile` is a wrapper around the command line interface of the official Arduino IDE. If it doesn't work in the IDE it won't work with this `Makefile`.
+Verify your code compiles and uploads via the official Arduino IDE. This `Makefile` is a wrapper around the [command line interface](https://github.com/arduino/Arduino/blob/master/build/shared/manpage.adoc) of the Arduino IDE. If it does not work in the IDE it will not work with this `Makefile`.
