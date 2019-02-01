@@ -1,14 +1,14 @@
 # Arduino Makefile
 
-Arduino `Makefile` to simplify testing and uploading code at the CLI
+Arduino `Makefile` to simplify testing and uploading Arduino sketches from the command line.
 
 ## Requirements
 
-Arduino version 1.5+ installed and in your `$PATH`
+Arduino version 1.5+ installed and in your `$PATH`.
 
 ## Installation
 
-Place this `Makefile` in your sketch directory
+Place this `Makefile` in your sketch directory.
 
 ## Configuration
 
@@ -16,7 +16,7 @@ Place this `Makefile` in your sketch directory
 
 or
 
-Edit the `Makefile` itself and configure the `BOARD` and `PORT` options
+Edit the `Makefile` itself and configure the `BOARD` and `PORT` options.
 
 ## Usage
 
