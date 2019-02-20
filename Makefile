@@ -43,7 +43,7 @@ monitor:
 	screen $(PORT) $(MONITOR_SPEED)
 
 clean:
-	rm -Rvf $(BUILD_DIR)
+	$(RM) $(BUILD_DIR)
 
 display_config:
 	@echo "BOARD         : $(BOARD)"
