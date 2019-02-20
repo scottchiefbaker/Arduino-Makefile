@@ -69,4 +69,4 @@ SPIFFS_ADDR = 0x300000
 spiffs:
 	@echo Building SPIFFS image
 	$(MKSPIFFS) -c $(DATADIR) --page 256 --block 8192 -s $(SPIFFS_SIZE) $(SPIFFS_IMG)
-	$(ESPTOOL) -cd nodemcu -cb 460800 -cp $(PORT) -ca 0x300000 -cf $(SPIFFS_IMG)
+	$(ESPTOOL) -cd nodemcu -cb 460800 -cp $(PORT) -ca $(SPIFFS_ADDR) -cf $(SPIFFS_IMG)
