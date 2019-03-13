@@ -42,6 +42,9 @@ upload: display_config
 monitor:
 	screen $(PORT) $(MONITOR_SPEED)
 
+binary: default
+	cp $(BUILD_DIR)/$(SKETCH_NAME).ino.bin $(CURDIR)/$(SKETCH_NAME).bin
+
 clean:
 	$(RM) $(BUILD_DIR)
 
