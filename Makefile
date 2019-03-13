@@ -62,6 +62,7 @@ display_config:
 
 MKSPIFFS    = $(shell find ~/.ardui* -type f -name mkspiffs | head -n1)
 ESPTOOL     = $(shell find ~/.ardui* -type f -name esptool | head -n1)
+ESPTOOL26   = $(shell find ~/.ardui* -type f -name esptool.py | head -n1)
 DATADIR     = $(CURDIR)/data/
 SPIFFS_IMG  = /tmp/$(SKETCH_NAME).spiffs
 # Should be 1028096,  2076672, or  3125248 (1MB, 2MB, or 3MB)
@@ -72,4 +73,5 @@ SPIFFS_ADDR = 0x300000
 spiffs:
 	@echo Building SPIFFS image
 	$(MKSPIFFS) -c $(DATADIR) --page 256 --block 8192 -s $(SPIFFS_SIZE) $(SPIFFS_IMG)
-	$(ESPTOOL) -cd nodemcu -cb 460800 -cp $(PORT) -ca $(SPIFFS_ADDR) -cf $(SPIFFS_IMG)
+	#$(ESPTOOL) -cd nodemcu -cb 460800 -cp $(PORT) -ca $(SPIFFS_ADDR) -cf $(SPIFFS_IMG)
+	$(ESPTOOL26) --baud 460800 --port $(PORT) write_flash $(SPIFFS_ADDR) $(SPIFFS_IMG)
