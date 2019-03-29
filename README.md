@@ -12,7 +12,7 @@ Place this `Makefile` in your sketch directory.
 
 ## Configuration
 
-`export BOARD=arduino:avr:uno && PORT=/dev/ttyACM0`
+`export BOARD=arduino:avr:uno && export PORT=/dev/ttyACM0`
 
 or
 
