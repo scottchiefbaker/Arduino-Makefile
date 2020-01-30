@@ -1,5 +1,6 @@
 #########################################################################
 # Arduino Makefile
+# https://github.com/scottchiefbaker/Arduino-Makefile
 #
 # Requirements: Arduino version 1.5+ installed and in your $PATH
 #
@@ -10,7 +11,8 @@
 # make monitor
 #
 # Or uncomment a board/port below to always use a specific board for
-# this project or use a 'board.mk' file
+# this project. Alernately you can use a 'board.mk' file to specify
+# a board for this project. See board.mk.sample for details
 #########################################################################
 
 #BOARD = arduino:avr:diecimila:cpu=atmega328                            # Arduino Duemilanove
