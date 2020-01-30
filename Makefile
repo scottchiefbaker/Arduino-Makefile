@@ -13,11 +13,13 @@
 # this project
 #########################################################################
 
-#BOARD = arduino:avr:diecimila:cpu=atmega328   # Arduino Duemilanove
-#BOARD = arduino:avr:mega:cpu=atmega1280       # Arduino Mega
-#BOARD = arduino:avr:uno                       # Arduino Uno
-#BOARD = esp8266:esp8266:nodemcuv2:baud=460800 # NodeMCU
-#BOARD = arduino:avr:nano:cpu=atmega328        # Arduino Nano
+#BOARD = arduino:avr:diecimila:cpu=atmega328 # Arduino Duemilanove
+#BOARD = arduino:avr:mega:cpu=atmega1280     # Arduino Mega
+#BOARD = arduino:avr:uno                     # Arduino Uno
+#BOARD = arduino:avr:nano:cpu=atmega328      # Arduino Nano
+
+#BOARD = esp8266:esp8266:nodemcuv2:baud=460800                          # NodeMCU/ESP8266
+#BOARD = esp32:esp32:esp32:CPUFreq=240,FlashMode=qio,UploadSpeed=921600 # ESP32
 
 #PORT = /dev/ttyUSB0
 #PORT = /dev/ttyACM0
