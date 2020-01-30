@@ -28,7 +28,7 @@
 # If there is a board.mk use the variables from that for this project
 include board.mk
 
-SKETCH_FILE   = $(shell ls -1 $(CURDIR)/*.ino | head -n1)
+SKETCH_FILE   = $(shell find $(CURDIR) -name "*.ino" -type f | sort | head -n1)
 SKETCH_NAME   = $(shell basename $(SKETCH_FILE:.ino=))
 MONITOR_SPEED = $(shell egrep 'Serial.begin\([0-9]+\)' $(SKETCH_FILE) | head -n1 | perl -pE 's/\D+//g')
 BUILD_DIR     = /tmp/arduino-build-$(SKETCH_NAME)/
