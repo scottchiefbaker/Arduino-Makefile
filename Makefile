@@ -45,7 +45,10 @@ monitor:
 	screen $(PORT) $(MONITOR_SPEED)
 
 binary: default
+	@echo
 	cp $(BUILD_DIR)/$(SKETCH_NAME).ino.bin $(CURDIR)/$(SKETCH_NAME).bin
+	@echo
+	@echo "Binary: $(CURDIR)/$(SKETCH_NAME).bin"
 
 clean:
 	$(RM) $(BUILD_DIR)
