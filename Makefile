@@ -10,7 +10,7 @@
 # make monitor
 #
 # Or uncomment a board/port below to always use a specific board for
-# this project
+# this project or use a 'board.mk' file
 #########################################################################
 
 #BOARD = arduino:avr:diecimila:cpu=atmega328                            # Arduino Duemilanove
@@ -24,6 +24,9 @@
 #PORT = /dev/ttyACM0
 
 #########################################################################
+
+# If there is a board.mk use the variables from that for this project
+include board.mk
 
 SKETCH_FILE   = $(shell ls -1 $(CURDIR)/*.ino | head -n1)
 SKETCH_NAME   = $(shell basename $(SKETCH_FILE:.ino=))
