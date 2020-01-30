@@ -1,0 +1,5 @@
+# If a board.mk file is found in the same directory as your Makefile
+# it will define which board/port to use for this project
+
+BOARD = arduino:avr:uno
+PORT  = /dev/ttyACM0
