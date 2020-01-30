@@ -27,7 +27,7 @@
 #########################################################################
 
 SKETCH_FILE   = $(shell ls -1 $(CURDIR)/*.ino | head -n1)
-SKETCH_NAME   = $(shell basename $(CURDIR))
+SKETCH_NAME   = $(shell basename $(SKETCH_FILE:.ino=))
 MONITOR_SPEED = $(shell egrep 'Serial.begin\([0-9]+\)' $(SKETCH_FILE) | head -n1 | perl -pE 's/\D+//g')
 BUILD_DIR     = /tmp/arduino-build-$(SKETCH_NAME)/
 
