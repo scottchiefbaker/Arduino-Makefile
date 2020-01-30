@@ -33,8 +33,19 @@ SKETCH_NAME   = $(shell basename $(SKETCH_FILE:.ino=))
 MONITOR_SPEED = $(shell egrep 'Serial.begin\([0-9]+\)' $(SKETCH_FILE) | head -n1 | perl -pE 's/\D+//g')
 BUILD_DIR     = /tmp/arduino-build-$(SKETCH_NAME)/
 
+# If the SKETCH_FILE == ""
+ifeq ($(SKETCH_FILE),)
+$(error No sketch found to compile. Sketch file should end in .ino and be in the same directory as Makefile)
+endif
+
+# If there is no BOARD set at all
 ifndef BOARD
 $(error BOARD variable is not set, unable to continue)
+endif
+
+# If there is no PORT set at all
+ifndef PORT
+$(error PORT variable is not set, unable to continue)
 endif
 
 default: display_config
