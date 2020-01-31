@@ -67,7 +67,8 @@ binary: default
 	@echo "Binary: $(BINARY)"
 
 clean:
-	$(RM) $(BUILD_DIR)
+	# Make sure BUILD_DIR is not an empty string, and then remove it
+	test -n "$(BUILD_DIR)" && $(RM) -r $(BUILD_DIR)
 
 display_config:
 	@echo "BOARD         : $(BOARD)"
