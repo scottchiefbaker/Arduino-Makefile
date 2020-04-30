@@ -28,7 +28,7 @@
 #########################################################################
 
 # If there is a board.mk use the variables from that for this project
-include board.mk
+-include board.mk
 
 SKETCH_FILE   = $(shell find $(CURDIR) -name "*.ino" -type f | sort | head -n1)
 SKETCH_NAME   = $(shell basename $(SKETCH_FILE:.ino=))
