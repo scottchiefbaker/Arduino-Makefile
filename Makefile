@@ -77,8 +77,9 @@ webota_upload: binary
 	curl -F "file=@$(BINARY)" $(WEBOTA_URL)
 
 clean:
-	# Make sure BUILD_DIR is not an empty string, and then remove it
+#	Make sure BUILD_DIR is not an empty string, and then remove it
 	test -n "$(BUILD_DIR)" && $(RM) -r $(BUILD_DIR)
+	$(RM) $(BINARY)
 
 display_config:
 	@echo "BOARD         : $(BOARD)"
