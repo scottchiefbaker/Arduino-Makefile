@@ -37,7 +37,7 @@ WEBOTA_URL ?= http://192.168.5.114:8080/webota
 SKETCH_FILE   = $(shell find $(CURDIR) -name "*.ino" -type f | sort | head -n1)
 SKETCH_DIR    = $(shell dirname $(SKETCH_FILE))
 SKETCH_NAME   = $(shell basename $(SKETCH_FILE:.ino=))
-MONITOR_SPEED = $(shell egrep 'Serial.begin\([0-9]+\)' $(SKETCH_FILE) | head -n1 | perl -pE 's/\D+//g')
+MONITOR_SPEED = $(shell grep -P 'Serial.begin\([0-9]+\)' $(SKETCH_FILE) | head -n1 | grep -Po '\d+' | head -n1)
 BUILD_DIR     = /tmp/arduino-build-$(SKETCH_NAME)/
 BINARY        = $(CURDIR)/$(SKETCH_NAME).bin
 
