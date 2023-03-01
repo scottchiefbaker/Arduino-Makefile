@@ -25,6 +25,9 @@
 PORT ?= /dev/ttyUSB0
 #PORT = /dev/ttyACM0
 
+# For WebOTA: https://github.com/scottchiefbaker/ESP-WebOTA
+WEBOTA_URL ?= http://192.168.5.114:8080/webota
+
 #########################################################################
 
 # If there is a board.mk use the variables from that for this project
@@ -69,6 +72,9 @@ binary: default
 	cp $(BUILD_DIR)/$(SKETCH_NAME).ino.bin $(CURDIR)/$(SKETCH_NAME).bin
 	@echo
 	@echo "Binary: $(BINARY)"
+
+webota_upload: binary
+	curl -F "file=@$(BINARY)" $(WEBOTA_URL)
 
 clean:
 	# Make sure BUILD_DIR is not an empty string, and then remove it
