@@ -60,7 +60,7 @@ endif
 ###################################################################################
 
 default: display_config
-	arduino-cli compile --fqbn $(BOARD) --port $(PORT) $(SKETCH_DIR) --export-binaries --build-path $(BUILD_DIR) --output-dir $(BUILD_DIR)
+	arduino-cli compile --fqbn $(BOARD) --port $(PORT) $(SKETCH_DIR) --export-binaries --output-dir $(BUILD_DIR)
 
 upload: display_config
 	arduino-cli compile --fqbn $(BOARD) --port $(PORT) $(SKETCH_DIR) --upload
