@@ -4,7 +4,7 @@ Arduino `Makefile` to simplify testing and uploading Arduino sketches from the c
 
 ## Requirements
 
-Arduino version 1.5+ installed and in your `$PATH`.
+[ArduinoCLI](https://arduino.github.io/arduino-cli/) installed and in your `$PATH`.
 
 ## Installation
 
@@ -26,4 +26,4 @@ Edit the `Makefile` itself and configure the `BOARD` and `PORT` options.
 
 ## Troubleshooting
 
-Verify your code compiles and uploads via the official Arduino IDE. This `Makefile` is a wrapper around the [command line interface](https://github.com/arduino/Arduino/blob/master/build/shared/manpage.adoc) of the Arduino IDE. If it does not work in the IDE it will not work with this `Makefile`.
+Verify your code compiles and uploads via the ArduinoIDE. Next verify that it works with the ArduinoCLI. If it does not work with the vanilla `arduino-cli` it will not work with this `Makefile`.
