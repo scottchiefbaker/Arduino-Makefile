@@ -13,6 +13,8 @@
 # Or uncomment a board/port below to always use a specific board for
 # this project. Alernately you can use a 'board.mk' file to specify
 # a board for this project. See board.mk.sample for details
+#
+# To find new boards: arduino-cli board listall
 #########################################################################
 
 #BOARD = arduino:avr:diecimila:cpu=atmega328                            # Arduino Duemilanove
