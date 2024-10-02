@@ -17,9 +17,6 @@
 # To find new boards: arduino-cli board listall
 #########################################################################
 
-
-PORT ?= /dev/ttyUSB0
-#PORT = /dev/ttyACM0
 #BOARD ?= arduino:avr:diecimila:cpu=atmega328                            # Arduino Duemilanove
 #BOARD ?= arduino:avr:mega:cpu=atmega1280                                # Arduino Mega
 #BOARD ?= arduino:avr:uno                                                # Arduino Uno
@@ -29,6 +26,11 @@ PORT ?= /dev/ttyUSB0
 #BOARD ?= esp32:esp32:esp32:CPUFreq=240,FlashMode=qio,UploadSpeed=921600 # ESP32
 #BOARD ?= esp32:esp32:lolin_s2_mini                                      # ESP32 S2 Mini
 #BOARD ?= esp32:esp32:lolin_c3_mini                                      # ESP32 C3 Mini
+
+# Use the first of either /dev/ttyACM0 or /dev/ttyUSB0
+PORT ?= $(shell ls /dev/tty* -1 | sort | grep -P 'ACM|USB' | head -n1)
+#PORT ?= /dev/ttyUSB0
+#PORT ?= /dev/ttyACM0
 
 # For WebOTA: https://github.com/scottchiefbaker/ESP-WebOTA
 WEBOTA_URL ?= http://192.168.5.114:8080/webota
